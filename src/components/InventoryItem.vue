@@ -1,15 +1,15 @@
 <template>
   <div class="inventory-item">
-    <img src="../assets/InventoryIcon/item1.png" alt="" />
-    <div class="inventory-item__order">{{order}}</div>
+    <div v-if="content">
+      <img src="../assets/InventoryIcon/item1.png" alt="" />
+      <div class="inventory-item__order">{{ content.id }}</div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-    props: {
-        order: Number
-    }
+  props: ['content']
 };
 </script>
 
