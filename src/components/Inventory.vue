@@ -90,7 +90,7 @@
     <div class="layout">
       <div v-for="item in [...Array(25).keys()]" :key="item">
         <div
-          style=" width: 105px;height: 100px;border: 1px solid #4d4d4d;"
+          style="width: 105px; height: 100px; border: 1px solid #4d4d4d"
         ></div>
       </div>
     </div>
@@ -99,7 +99,7 @@
   
   <script>
 import { Container, Draggable } from "vue3-smooth-dnd";
-import { applyDrag, generateItems } from "./utils";
+import { generateItems } from "./utils";
 import InventoryItem from "./InventoryItem.vue";
 export default {
   name: "Groups",
@@ -133,8 +133,9 @@ export default {
 
   methods: {
     onDrop(collection, dropResult) {
-      // console.log(collection, dropResult);
-      this[collection] = applyDrag(this[collection], dropResult);
+      console.log("ww", collection, dropResult);
+      
+      this.applyDrag(this[collection], dropResult);
     },
 
     getChildPayload1(index) {
@@ -146,6 +147,7 @@ export default {
     },
 
     getChildPayload3(index) {
+     
       return this.items3[index];
     },
 
@@ -154,6 +156,22 @@ export default {
     },
     getChildPayload5(index) {
       return this.items5[index];
+    },
+    applyDrag(arr, dragResult) {
+        // console.log(dragResult);
+      const { removedIndex, addedIndex, payload } = dragResult;
+      if (removedIndex === null && addedIndex === null) return arr;
+    //   const result = [...arr];
+    //   let itemToAdd = payload;
+
+     
+
+      if (addedIndex !== null) {
+        console.log(arr[addedIndex].id,payload.id);
+        this.store.changePlace(arr[addedIndex].id, payload.id)
+      }
+
+     
     },
   },
 };
