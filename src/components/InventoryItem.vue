@@ -1,12 +1,16 @@
 <template>
   <div class="inventory-item">
     <img src="../assets/InventoryIcon/item1.png" alt="" />
-    <div class="inventory-item__order">0</div>
+    <div class="inventory-item__order">{{order}}</div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+    props: {
+        order: Number
+    }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -17,7 +21,6 @@ export default {};
   position: relative;
   justify-content: center;
   align-items: center;
-  border: 1px solid #4d4d4d;
   &__order {
     position: absolute;
     width: 16px;

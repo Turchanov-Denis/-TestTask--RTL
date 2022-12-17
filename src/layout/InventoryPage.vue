@@ -12,7 +12,7 @@ const inventory = useInventoryStore();
       <DescrCart
         title="Location"
         descr="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet cumque culpa voluptate itaque iste impedit libero, dolores corporis quo asperiores debitis excepturi expedita velit hic, optio commodi voluptatem incidunt eum?"></DescrCart>
-        <Inventory></Inventory>
+        <Inventory :store="inventory"></Inventory>
     </div>
     <div class="inventory-section__row">
       <SearchComponent></SearchComponent>
