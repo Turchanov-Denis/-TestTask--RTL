@@ -1,14 +1,16 @@
 import { defineStore } from 'pinia'
 
+
+
 export const useInventoryStore = defineStore('inventory', {
     state: () => {
         return {
-            listItems: [{
+            listItems: (localStorage[['listItems']])? Object.values(JSON.parse(localStorage['listItems'])) : [{
                 id: 0,
                 localindex: 0
             }, {
                 id: 1,
-                localindex: 3
+                localindex: 10
             }]
         }
     },
@@ -21,8 +23,7 @@ export const useInventoryStore = defineStore('inventory', {
                 }
                 return item
             })
-
-            console.log(this.listItems);
+            localStorage.setItem('listItems', JSON.stringify({...this.listItems}))
         },
         delPlace(order) {
             console.log(order);

@@ -6,7 +6,7 @@ import ModalAdd from './ModalAdd.vue';
   <div class="inventory-item">
     <div
       v-if="content"
-      
+      v-on:dblclick="()=>{this.isActive = !this.isActive;}"
       @mousedown="mousedown"
       @contextmenu.prevent
     >
@@ -31,12 +31,10 @@ export default {
   methods: {
     mousedown(event) {
       console.log(event.buttons);
-      if (event.buttons === 1) {
+      if (event.buttons === 2) {
         this.isAdd = !this.isAdd
       }
-      else {
-        this.isActive = !this.isActive;
-      }
+      
     },
     delMetod() {
       this.store.delPlace(this.content.id);  this.isActive = !this.isActive;

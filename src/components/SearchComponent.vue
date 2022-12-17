@@ -18,9 +18,9 @@ export default {
   position: relative;
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin: 20px;
   box-sizing: border-box;
-  width: 785px;
+  width: 795px;
   height: 72px;
   background: #262626;
   /* Primary Border */
