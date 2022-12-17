@@ -23,6 +23,10 @@ export const useInventoryStore = defineStore('inventory', {
             })
 
             console.log(this.listItems);
+        },
+        delPlace(order) {
+            console.log(order);
+            this.listItems = this.listItems.filter(item => item.id !== order)
         }
     },
 })

@@ -9,6 +9,7 @@
         >
           <Draggable v-for="item in items1" :key="item.id">
             <InventoryItem
+            :store="store"
               :content="
                 store.listItems.find(
                   (itemStore) => itemStore.localindex == item.id
@@ -26,6 +27,7 @@
         >
           <Draggable v-for="item in items2" :key="item.id">
             <InventoryItem
+                :store="store"
               :content="
                 store.listItems.find(
                   (itemStore) => itemStore.localindex == item.id
@@ -43,6 +45,7 @@
         >
           <Draggable v-for="item in items3" :key="item.id">
             <InventoryItem
+            :store="store"
               :content="
                 store.listItems.find(
                   (itemStore) => itemStore.localindex == item.id
@@ -60,6 +63,7 @@
         >
           <Draggable v-for="item in items4" :key="item.id">
             <InventoryItem
+            :store="store"
               :content="
                 store.listItems.find(
                   (itemStore) => itemStore.localindex == item.id
@@ -77,6 +81,7 @@
         >
           <Draggable v-for="item in items5" :key="item.id">
             <InventoryItem
+            :store="store"
               :content="
                 store.listItems.find(
                   (itemStore) => itemStore.localindex == item.id
@@ -158,16 +163,9 @@ export default {
       return this.items5[index];
     },
     applyDrag(arr, dragResult) {
-        // console.log(dragResult);
       const { removedIndex, addedIndex, payload } = dragResult;
-      if (removedIndex === null && addedIndex === null) return arr;
-    //   const result = [...arr];
-    //   let itemToAdd = payload;
-
-     
-
       if (addedIndex !== null) {
-        console.log(arr[addedIndex].id,payload.id);
+        // console.log(arr[addedIndex].id,payload.id);
         this.store.changePlace(arr[addedIndex].id, payload.id)
       }
 
