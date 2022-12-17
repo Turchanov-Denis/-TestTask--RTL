@@ -2,6 +2,7 @@
 import { useInventoryStore } from "@/store/inventory";
 import DescrCart from "../components/DescrCart.vue";
 import SearchComponent from "../components/SearchComponent.vue";
+import Inventory from "../components/Inventory.vue";
 const inventory = useInventoryStore();
 </script>
 
@@ -10,9 +11,8 @@ const inventory = useInventoryStore();
     <div class="inventory-section__row">
       <DescrCart
         title="Location"
-        descr="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet cumque culpa voluptate itaque iste impedit libero, dolores corporis quo asperiores debitis excepturi expedita velit hic, optio commodi voluptatem incidunt eum?"
-      ></DescrCart>
-      <div class="inventory"></div>
+        descr="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet cumque culpa voluptate itaque iste impedit libero, dolores corporis quo asperiores debitis excepturi expedita velit hic, optio commodi voluptatem incidunt eum?"></DescrCart>
+        <Inventory></Inventory>
     </div>
     <div class="inventory-section__row">
       <SearchComponent></SearchComponent>
@@ -33,23 +33,6 @@ export default {};
   &__row {
     display: flex;
     align-items: start;
-  }
-}
-
-.inventory {
-  margin-left: 20px;
-  width: 525px;
-  height: 500px;
-  display: inline-flex;
-
-  /* Seondary BG */
-
-  background: #262626;
-  /* Primary Border */
-
-  border: 1px solid #4d4d4d;
-  border-radius: 12px;
-  &__container {
   }
 }
 </style>
