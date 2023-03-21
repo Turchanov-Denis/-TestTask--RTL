@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "https://turchanov-denis.github.io/-TestTask--RTL/",
+  base: "https://turchanov-denis.github.io/-TestTask--RTL/dist",
   plugins: [vue()],
   resolve: {
     alias: {
